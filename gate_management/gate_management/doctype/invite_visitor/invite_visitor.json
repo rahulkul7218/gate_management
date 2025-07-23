@@ -1,0 +1,218 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "VSTPASS-.####",
+ "creation": "2025-07-18 11:24:47.656058",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ndja",
+  "amended_from",
+  "appointment_details_section",
+  "scheduled_date",
+  "duration",
+  "plant_name",
+  "column_break_jjuy",
+  "scheduled_time",
+  "invite_to_visitor_mobile",
+  "invite_to_visitor_email",
+  "multi_visit",
+  "status",
+  "visitee_details_section",
+  "pass_type",
+  "visitee_mobile",
+  "column_break_xjel",
+  "whom_to_meet",
+  "visitee_email",
+  "visitor_details_section",
+  "visitor_name",
+  "visitor_email",
+  "visitor_mobile",
+  "column_break_bymu",
+  "visitor_company_name",
+  "building_name",
+  "department",
+  "qrcode_link"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ndja",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Invite Visitor",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "appointment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Appointment Details"
+  },
+  {
+   "default": "Today",
+   "fieldname": "scheduled_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Scheduled Date"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "in_list_view": 1,
+   "label": "Duration"
+  },
+  {
+   "fieldname": "plant_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Plant Name",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_jjuy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "scheduled_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Scheduled Time",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "invite_to_visitor_mobile",
+   "fieldtype": "Check",
+   "label": "Invite to Visitor Mobile"
+  },
+  {
+   "default": "0",
+   "fieldname": "invite_to_visitor_email",
+   "fieldtype": "Check",
+   "label": "Invite to Visitor Email"
+  },
+  {
+   "default": "0",
+   "fieldname": "multi_visit",
+   "fieldtype": "Check",
+   "label": "Multi Visit"
+  },
+  {
+   "fieldname": "visitee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Visitee Details"
+  },
+  {
+   "fieldname": "pass_type",
+   "fieldtype": "Select",
+   "label": "Pass Type",
+   "options": "Delivery\nVendor\nContractor\nVisitor\nOther"
+  },
+  {
+   "fieldname": "visitee_mobile",
+   "fieldtype": "Data",
+   "label": "Visitee Mobile"
+  },
+  {
+   "fieldname": "column_break_xjel",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "whom_to_meet",
+   "fieldtype": "Data",
+   "label": "Whom to Meet"
+  },
+  {
+   "fieldname": "visitee_email",
+   "fieldtype": "Data",
+   "label": "Visitee email"
+  },
+  {
+   "fieldname": "visitor_details_section",
+   "fieldtype": "Section Break",
+   "label": "Visitor Details"
+  },
+  {
+   "fieldname": "visitor_name",
+   "fieldtype": "Data",
+   "label": "Visitor Name"
+  },
+  {
+   "fieldname": "visitor_email",
+   "fieldtype": "Data",
+   "label": "Visitor Email"
+  },
+  {
+   "fieldname": "visitor_mobile",
+   "fieldtype": "Data",
+   "label": "Visitor Mobile"
+  },
+  {
+   "fieldname": "column_break_bymu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visitor_company_name",
+   "fieldtype": "Data",
+   "label": "Visitor Company Name"
+  },
+  {
+   "fieldname": "building_name",
+   "fieldtype": "Select",
+   "label": "Building Name",
+   "options": "Ground Floor\nFirst Floor\nSecond Floor\nThird Floor"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "qrcode_link",
+   "fieldtype": "Data",
+   "label": "QRCode Link"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApproved\nRejected"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-18 13:36:16.217684",
+ "modified_by": "Administrator",
+ "module": "Gate Management",
+ "name": "Invite Visitor",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

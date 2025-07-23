@@ -1,0 +1,269 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-17 09:57:48.144065",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ycxc",
+  "status",
+  "column_break_qhun",
+  "amended_from",
+  "section_break_ixws",
+  "entry_no",
+  "entry_date",
+  "for",
+  "column_break_mmxj",
+  "time",
+  "entry_type",
+  "entity_name",
+  "supplier",
+  "purchase_order",
+  "customer",
+  "sales_order",
+  "po_date",
+  "section_break_bdgl",
+  "receive_mode",
+  "section_break_gedf",
+  "person_name",
+  "column_break_gwhs",
+  "person_mobile_no",
+  "vehicle_details_section",
+  "vehicle_no",
+  "driver_name",
+  "vehicle_front_photo",
+  "column_break_wixl",
+  "transporter_name",
+  "driver_mobile_no",
+  "vehicle_back_photo",
+  "document_photo",
+  "section_break_hkxy",
+  "order_items"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ycxc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "New\nDraft\nReceived at Gate\nTransfer in Process\nPartially Transferred\nClosed\nCancelled"
+  },
+  {
+   "fieldname": "column_break_qhun",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gate Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_ixws",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "entry_no",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Entry No",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "entry_date",
+   "fieldtype": "Date",
+   "label": "Entry Date",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.entry_type == 'Material Receipt'\n",
+   "fieldname": "for",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "From",
+   "options": "\nSupplier\nCustomer"
+  },
+  {
+   "fieldname": "column_break_mmxj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Created Time"
+  },
+  {
+   "fieldname": "entry_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Entry Type",
+   "options": "\nVisitor Entry\nEmployee Outward\nMaterial Receipt"
+  },
+  {
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Entity Name"
+  },
+  {
+   "depends_on": "eval:doc.for == 'Supplier'",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "Purchase Order"
+  },
+  {
+   "depends_on": "eval:doc.for == 'Customer'",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "section_break_bdgl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "receive_mode",
+   "fieldtype": "Select",
+   "label": "Receive Mode",
+   "options": "\nBy Hand\nBy Vehicle",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.receive_mode== 'By Hand'",
+   "fieldname": "section_break_gedf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "person_name",
+   "fieldtype": "Data",
+   "label": "Person Name"
+  },
+  {
+   "fieldname": "column_break_gwhs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "person_mobile_no",
+   "fieldtype": "Data",
+   "label": "Person Mobile No"
+  },
+  {
+   "depends_on": "eval:doc.receive_mode== 'By Vehicle'",
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "description": "Ensure the front side and number plate are clearly visible.",
+   "fieldname": "vehicle_front_photo",
+   "fieldtype": "Attach",
+   "label": "Vehicle Front Photo"
+  },
+  {
+   "fieldname": "column_break_wixl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transporter_name",
+   "fieldtype": "Data",
+   "label": "Transporter Name"
+  },
+  {
+   "fieldname": "driver_mobile_no",
+   "fieldtype": "Data",
+   "label": "Driver Mobile No"
+  },
+  {
+   "description": "Ensure the back side and number plate are clearly visible.",
+   "fieldname": "vehicle_back_photo",
+   "fieldtype": "Attach",
+   "label": "Vehicle Back Photo"
+  },
+  {
+   "fieldname": "document_photo",
+   "fieldtype": "Table",
+   "label": "Document Photo",
+   "options": "Document Photos"
+  },
+  {
+   "depends_on": "eval:doc.for == 'Supplier'",
+   "fetch_from": "purchase_order.transaction_date",
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "label": "PO Date"
+  },
+  {
+   "fieldname": "section_break_hkxy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "order_items",
+   "fieldtype": "Table",
+   "label": "Order Items",
+   "options": "Purchase order Items"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-17 15:08:31.599292",
+ "modified_by": "Administrator",
+ "module": "Gate Management",
+ "name": "Gate Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
