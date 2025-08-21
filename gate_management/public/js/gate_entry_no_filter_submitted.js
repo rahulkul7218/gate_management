@@ -24,8 +24,8 @@ frappe.ui.form.on("Purchase Receipt", {
         frm.set_query("gate_entry_no", function() {
             return {
                 filters: {
-                    docstatus: 1,
-                    // from: "Supplier",
+                   // docstatus: 1,
+                    workflow_state: "Submit",
                     supplier: frm.doc.supplier
                 }
             };
@@ -35,8 +35,8 @@ frappe.ui.form.on("Purchase Receipt", {
         frm.set_query("gate_entry_no", function() {
             return {
                 filters: {
-                    docstatus: 1,
-                    // from: "Supplier",
+                  //  docstatus: 1,
+                    workflow_state: "Submit",
                     supplier: frm.doc.supplier
                 }
             };

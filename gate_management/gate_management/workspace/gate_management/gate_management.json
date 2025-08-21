@@ -1,0 +1,59 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"3TZff6zLMT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Gate Management</span>\",\"col\":12}},{\"id\":\"-YBU5os4k6\",\"type\":\"card\",\"data\":{\"card_name\":\"Gate Management\",\"col\":4}}]",
+ "creation": "2025-08-20 16:27:14.389128",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "arrow-right",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Gate Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gate Management",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gate Entry",
+   "link_count": 0,
+   "link_to": "Gate Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Gate Exit",
+   "link_count": 0,
+   "link_to": "Gate Exit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-08-21 10:38:52.236391",
+ "modified_by": "Administrator",
+ "module": "Gate Management",
+ "name": "Gate Management",
+ "number_cards": [],
+ "owner": "admin@gmail.com",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 37.0,
+ "shortcuts": [],
+ "title": "Gate Management"
+}

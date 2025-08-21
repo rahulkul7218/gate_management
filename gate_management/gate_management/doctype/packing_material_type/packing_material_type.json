@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:name1",
  "creation": "2025-08-19 15:12:53.973203",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -19,10 +20,11 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "modified": "2025-08-19 16:36:22.271243",
- "modified_by": "admin@gmail.com",
+ "modified_by": "Administrator",
  "module": "Gate Management",
  "name": "Packing Material Type",
- "owner": "admin@gmail.com",
+ "owner": "Administrator",
+  "naming_rule": "By fieldname",
  "permissions": [
   {
    "create": 1,
@@ -40,5 +42,8 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
+ "title_field": "name1",
+ "search_fields": "name1",
+ "show_name_in_global_search": 1,
  "states": []
 }

@@ -259,11 +259,9 @@ frappe.ui.form.on('Gate Entry', {
             if (frm.doc.gate_entry_type === "RM Inward") {
                 frm.set_value('from', 'Supplier');
             }
-
-            // You can add more mappings here if needed
-            // if (frm.doc.gate_entry_type === "Sales Invoice" || frm.doc.gate_entry_type === "Delivery Note(DC)") {
-            //     frm.set_value('from', 'Customer');
-            // }
+            if (frm.doc.gate_entry_type === "Return From Customer") {
+                frm.set_value('from', 'Customer');
+            }
         }
 
         // update stored last value

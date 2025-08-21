@@ -242,7 +242,11 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 after_migrate = [
-    "gate_management.patches.v0_1.add_fields_inside_purchase_receipt.execute"
+    "gate_management.patches.v0_1.add_fields_inside_purchase_receipt.execute",
+    "gate_management.patches.v0_1.add_fields_inside_item_group.execute",
+    "gate_management.patches.v0_1.remove_mandatory_field_item_code_from_item.execute",
+    "gate_management.patches.v0_1.non_mandatory_field_item_code_from_item.execute"
+    
 ]
 doctype_js = {
 	"Purchase Receipt": "public/js/gate_entry_no_filter_submitted.js",
@@ -250,6 +254,10 @@ doctype_js = {
 doc_events = {
     "Purchase Receipt": {
         "on_submit": "gate_management.api.purchase_receipt_on_submit.purchase_receipt_on_submit"
-    }
-}
+    },
+    "Item": {
+        "before_insert": "gate_management.api.item_code_generate_by_item_group_prefix.item_code_generate_by_item_group_prefix"
 
+    }
+
+}

@@ -231,5 +231,8 @@ frappe.ui.form.on('Gate Exit', {
         if (frm.doc.gate_entry_type === "Sales Invoice" || frm.doc.gate_entry_type === "Delivery Note(DC)") {
             frm.set_value("from", "Customer");
         }
+        if (frm.doc.gate_entry_type === "Return To Supplier") {
+            frm.set_value("from", "Supplier");
+        }
     }
 });

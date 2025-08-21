@@ -2,6 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "format:GE-{YYYY}-{MM}-{####}",
  "creation": "2025-08-19 12:50:02.632309",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -180,7 +181,8 @@
    "default": "0",
    "fieldname": "grn_done",
    "fieldtype": "Check",
-   "label": "GRN Done"
+   "label": "GRN Done",
+   "read_only": 1
   },
   {
    "fieldname": "packing_material_type",
@@ -193,11 +195,12 @@
  "grid_page_length": 50,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-20 17:56:02.705658",
- "modified_by": "admin@gmail.com",
+ "modified": "2025-08-21 14:00:02.916893",
+ "modified_by": "Administrator",
  "module": "Gate Management",
  "name": "Gate Entry",
- "owner": "admin@gmail.com",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
@@ -215,7 +218,10 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "entry_no",
+ "show_name_in_global_search": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "entry_no"
 }
