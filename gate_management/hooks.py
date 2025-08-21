@@ -245,11 +245,14 @@ after_migrate = [
     "gate_management.patches.v0_1.add_fields_inside_purchase_receipt.execute",
     "gate_management.patches.v0_1.add_fields_inside_item_group.execute",
     "gate_management.patches.v0_1.remove_mandatory_field_item_code_from_item.execute",
-    "gate_management.patches.v0_1.non_mandatory_field_item_code_from_item.execute"
+    "gate_management.patches.v0_1.non_mandatory_field_item_code_from_item.execute",
+    "gate_management.patches.v0_1.create_runner_quantity_field_on_item.execute"
+    
     
 ]
 doctype_js = {
 	"Purchase Receipt": "public/js/gate_entry_no_filter_submitted.js",
+    "Item": "public/js/item_group_equal_raw_material_then_runner_qty_mandatory.js"
 }
 doc_events = {
     "Purchase Receipt": {

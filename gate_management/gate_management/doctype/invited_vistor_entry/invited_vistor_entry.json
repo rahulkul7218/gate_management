@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:VST-INV-{YYYY}-{MM}-{####}",
+ "creation": "2025-08-21 15:34:49.548955",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xm6j",
+  "amended_from",
+  "visitor_name",
+  "visitor_mobile_number",
+  "visitor_email_id",
+  "column_break_bctt",
+  "purpose_of_visit",
+  "host_name",
+  "department",
+  "visit_date",
+  "visit_time_slot",
+  "exit_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_xm6j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Invited Vistor Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "visitor_name",
+   "fieldtype": "Data",
+   "label": "Visitor Name"
+  },
+  {
+   "fieldname": "visitor_mobile_number",
+   "fieldtype": "Data",
+   "label": "Visitor Mobile Number"
+  },
+  {
+   "fieldname": "visitor_email_id",
+   "fieldtype": "Data",
+   "label": "Visitor Email ID"
+  },
+  {
+   "fieldname": "column_break_bctt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "purpose_of_visit",
+   "fieldtype": "Link",
+   "label": "Purpose of Visit",
+   "options": "Purpose of Visit"
+  },
+  {
+   "fieldname": "host_name",
+   "fieldtype": "Data",
+   "label": "Host Name"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "visit_date",
+   "fieldtype": "Date",
+   "label": "Visit Date"
+  },
+  {
+   "fieldname": "visit_time_slot",
+   "fieldtype": "Duration",
+   "label": "Visit Time Slot"
+  },
+  {
+   "fieldname": "exit_time",
+   "fieldtype": "Time",
+   "label": "Exit Time"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-21 15:42:05.803045",
+ "modified_by": "Administrator",
+ "module": "Gate Management",
+ "name": "Invited Vistor Entry",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
