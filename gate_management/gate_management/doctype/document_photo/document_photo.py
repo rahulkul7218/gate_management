@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class VisitorInOutRegister(Document):
+class DocumentPhoto(Document):
 	pass

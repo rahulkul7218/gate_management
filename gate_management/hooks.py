@@ -241,3 +241,15 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+after_migrate = [
+    "gate_management.patches.v0_1.add_fields_inside_purchase_receipt.execute"
+]
+doctype_js = {
+	"Purchase Receipt": "public/js/gate_entry_no_filter_submitted.js",
+}
+doc_events = {
+    "Purchase Receipt": {
+        "on_submit": "gate_management.api.purchase_receipt_on_submit.purchase_receipt_on_submit"
+    }
+}
+

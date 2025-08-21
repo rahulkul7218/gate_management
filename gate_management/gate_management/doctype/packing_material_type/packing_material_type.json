@@ -1,39 +1,28 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-07-16 18:17:26.865973",
+ "creation": "2025-08-19 15:12:53.973203",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "date",
-  "column_break_ybme",
-  "time"
+  "name1"
  ],
  "fields": [
   {
-   "default": "Today",
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
-   "fieldname": "column_break_ybme",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "time",
-   "fieldtype": "Time",
-   "label": "Time"
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-16 18:22:46.828733",
- "modified_by": "Administrator",
+ "modified": "2025-08-19 16:36:22.271243",
+ "modified_by": "admin@gmail.com",
  "module": "Gate Management",
- "name": "Visitor Entry",
- "owner": "Administrator",
+ "name": "Packing Material Type",
+ "owner": "admin@gmail.com",
  "permissions": [
   {
    "create": 1,
