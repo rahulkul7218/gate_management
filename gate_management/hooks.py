@@ -261,3 +261,4 @@ doc_events = {
     }
 
 }
+fixtures = ["Workflow", "Workflow State", "Workflow Action"]
