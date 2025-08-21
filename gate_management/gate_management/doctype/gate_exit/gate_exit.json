@@ -2,23 +2,20 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "creation": "2025-08-19 12:50:02.632309",
+ "creation": "2025-08-19 18:29:35.628848",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_yd8g",
-  "amended_from",
   "entry_no",
-  "grn_done",
   "gate_entry_type",
   "from",
   "vendorcustomer",
   "supplier",
-  "other_details",
-  "descriptionremark",
   "document",
   "document_no",
-  "packing_material_type",
+  "other_details",
+  "descriptionremark",
   "package_qty",
   "photo_of_packages",
   "column_break_krzp",
@@ -30,7 +27,8 @@
   "vehicle_number_plate_photo",
   "vehicle_photo_with_goods",
   "section_break_cnwt",
-  "document_photo"
+  "document_photo",
+  "amended_from"
  ],
  "fields": [
   {
@@ -42,7 +40,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Gate Entry",
+   "options": "Gate Exit",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -55,23 +53,17 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_krzp",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "gate_entry_type",
    "fieldtype": "Select",
-   "label": "Gate Entry Type",
-   "options": "\nRM Inward\nReturn From Customer\nReturnable Gate Passed Material\nOther",
+   "label": "Gate Exit Type",
+   "options": "\nSales Invoice\nDelivery Note(DC)\nReturn To Supplier\nOther",
    "reqd": 1
   },
   {
-   "fieldname": "material_movement_type",
+   "fieldname": "from",
    "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Material Movement Type",
-   "options": "\nBy Vehicle\nBy Hand",
-   "reqd": 1
+   "label": "From",
+   "options": "\nCustomer\nSupplier"
   },
   {
    "depends_on": "eval:doc.from=='Customer'",
@@ -81,23 +73,6 @@
    "options": "Customer"
   },
   {
-   "fieldname": "other_details",
-   "fieldtype": "Data",
-   "label": "Other Details"
-  },
-  {
-   "fieldname": "descriptionremark",
-   "fieldtype": "Small Text",
-   "label": "Description/Remark"
-  },
-  {
-   "fieldname": "from",
-   "fieldtype": "Select",
-   "label": "From",
-   "options": "\nCustomer\nSupplier",
-   "reqd": 1
-  },
-  {
    "depends_on": "eval:doc.from=='Supplier'",
    "fieldname": "supplier",
    "fieldtype": "Link",
@@ -105,11 +80,9 @@
    "options": "Supplier"
   },
   {
-   "depends_on": "eval:doc.from=='Supplier'",
-   "fieldname": "document_no",
-   "fieldtype": "Link",
-   "label": "Document No.",
-   "options": "Purchase Order"
+   "fieldname": "descriptionremark",
+   "fieldtype": "Small Text",
+   "label": "Description/Remark"
   },
   {
    "depends_on": "eval:doc.from=='Customer'",
@@ -119,10 +92,34 @@
    "options": "Sales Order"
   },
   {
-   "depends_on": "eval:doc.material_movement_type==\"By Vehicle\"",
-   "fieldname": "vehicle_no",
-   "fieldtype": "Data",
-   "label": "Vehicle No"
+   "depends_on": "eval:doc.from=='Supplier'",
+   "fieldname": "document_no",
+   "fieldtype": "Link",
+   "label": "Document No.",
+   "options": "Purchase Order"
+  },
+  {
+   "fieldname": "package_qty",
+   "fieldtype": "Float",
+   "label": "Package Qty"
+  },
+  {
+   "fieldname": "photo_of_packages",
+   "fieldtype": "Attach",
+   "label": "Photo of Packages"
+  },
+  {
+   "fieldname": "column_break_krzp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "By Vehicle",
+   "fieldname": "material_movement_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Material Movement Type",
+   "options": "\nBy Vehicle\nBy Hand",
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.material_movement_type==\"By Hand\"",
@@ -141,6 +138,12 @@
    "fieldname": "delivered_by_face_photo",
    "fieldtype": "Attach",
    "label": "Delivered By Face Photo"
+  },
+  {
+   "depends_on": "eval:doc.material_movement_type==\"By Vehicle\"",
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
   },
   {
    "depends_on": "eval:doc.material_movement_type==\"By Vehicle\"",
@@ -165,38 +168,19 @@
    "options": "Document Photo"
   },
   {
-   "fieldname": "package_qty",
-   "fieldtype": "Float",
-   "label": "Package Qty",
-   "reqd": 1
-  },
-  {
-   "fieldname": "photo_of_packages",
-   "fieldtype": "Attach",
-   "label": "Photo of Packages",
-   "reqd": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "grn_done",
-   "fieldtype": "Check",
-   "label": "GRN Done"
-  },
-  {
-   "fieldname": "packing_material_type",
-   "fieldtype": "Link",
-   "label": "Packing Material Type",
-   "options": "Packing Material Type",
-   "reqd": 1
+   "depends_on": "eval:doc.gate_entry_type==\"Other\"",
+   "fieldname": "other_details",
+   "fieldtype": "Data",
+   "label": "Other Details"
   }
  ],
  "grid_page_length": 50,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-20 17:56:02.705658",
+ "modified": "2025-08-20 14:52:04.653628",
  "modified_by": "admin@gmail.com",
  "module": "Gate Management",
- "name": "Gate Entry",
+ "name": "Gate Exit",
  "owner": "admin@gmail.com",
  "permissions": [
   {

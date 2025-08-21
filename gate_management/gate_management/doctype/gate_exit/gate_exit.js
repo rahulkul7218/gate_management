@@ -1,12 +1,13 @@
 // Copyright (c) 2025, Assimilate Technologies Pvt Ltd and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Gate Entry", {
+// frappe.ui.form.on("Gate Exit", {
 // 	refresh(frm) {
 
 // 	},
 // });
-frappe.ui.form.on('Gate Entry', {
+
+frappe.ui.form.on('Gate Exit', {
     gate_entry_type: function(frm) {
         if (frm.doc.gate_entry_type === "Other") {
             // Hide 'vendorcustomer'
@@ -14,7 +15,7 @@ frappe.ui.form.on('Gate Entry', {
 
             // Make 'descriptionremark' mandatory
             frm.set_df_property('descriptionremark', 'reqd', 1);
-              frm.set_df_property('other_details', 'reqd', 1);
+            frm.set_df_property('other_details', 'reqd', 1);
         } else {
             // Show 'vendorcustomer' again
             frm.set_df_property('vendorcustomer', 'hidden', 0);
@@ -30,7 +31,7 @@ frappe.ui.form.on('Gate Entry', {
     }
 });
 
-frappe.ui.form.on('Gate Entry', {
+frappe.ui.form.on('Gate Exit', {
     refresh: function(frm) {
         // Run once on refresh
         frm.trigger("toggle_vehicle_no_req");
@@ -52,7 +53,7 @@ frappe.ui.form.on('Gate Entry', {
     }
 });
 
-frappe.ui.form.on('Gate Entry', {
+frappe.ui.form.on('Gate Exit', {
     vehicle_no: function(frm) {
         if (frm.doc.vehicle_no) {
             frm.set_value('vehicle_no', frm.doc.vehicle_no.toUpperCase());
@@ -66,7 +67,7 @@ frappe.ui.form.on('Gate Entry', {
 });
 
 
-frappe.ui.form.on('Gate Entry', {
+frappe.ui.form.on('Gate Exit', {
     validate: function(frm) {
         let vehicleNo = frm.doc.vehicle_no;
 
@@ -110,7 +111,7 @@ frappe.ui.form.on('Gate Entry', {
 //     }
 // });
 
-frappe.ui.form.on('Gate Entry', {
+frappe.ui.form.on('Gate Exit', {
     refresh: function(frm) {
         let field = frm.fields_dict['delivered_by_mobile_no'].$input;
 
@@ -142,7 +143,7 @@ frappe.ui.form.on('Gate Entry', {
     }
 });
 
-frappe.ui.form.on('Gate Entry', {
+frappe.ui.form.on('Gate Exit', {
     refresh: function(frm) {
         // Apply validation on delivered_by_name
         frm.fields_dict['delivered_by_name'].$input.on("input", function(e) {
@@ -155,8 +156,7 @@ frappe.ui.form.on('Gate Entry', {
     }
 });
 
-
-frappe.ui.form.on('Gate Entry', {
+frappe.ui.form.on('Gate Exit', {
     after_save: function(frm) {
         if (frm.doc.name && frm.doc.entry_no !== frm.doc.name) {
             frm.set_value('entry_no', frm.doc.name);
@@ -165,13 +165,19 @@ frappe.ui.form.on('Gate Entry', {
     }
 });
 
-frappe.listview_settings["Gate Entry"] = {
+frappe.listview_settings["Gate Exit"] = {
     hide_name_column: true,
     hide_name_filter: true,
 };
 
+frappe.ui.form.on('Gate Exit', {
+    gate_entry_type: function(frm) {
+        // When gate_entry_type changes, reset 'from' field
+        frm.set_value('from', '');
+    }
+});
 
-frappe.ui.form.on('Gate Entry', {
+frappe.ui.form.on('Gate Exit', {
     material_movement_type: function(frm) {
         if (frm.doc.material_movement_type === "By Hand") {
             // Make fields mandatory
@@ -188,7 +194,7 @@ frappe.ui.form.on('Gate Entry', {
 });
 
 
-frappe.ui.form.on('Gate Entry', {
+frappe.ui.form.on('Gate Exit', {
     from: function(frm) {
         if (frm.doc.from === "Customer") {
             // Make fields mandatory
@@ -204,7 +210,7 @@ frappe.ui.form.on('Gate Entry', {
     }
 });
 
-frappe.ui.form.on('Gate Entry', {
+frappe.ui.form.on('Gate Exit', {
     from: function(frm) {
         if (frm.doc.from === "Supplier") {
             // Make fields mandatory
@@ -220,53 +226,10 @@ frappe.ui.form.on('Gate Entry', {
     }
 });
 
-// frappe.ui.form.on('Gate Entry', {
-//     gate_entry_type: function(frm) {
-//         if (frm.doc.gate_entry_type === "RM Inward") {
-//             frm.set_value("from", "Supplier");
-//         }
-//     }
-// });
-
-// frappe.ui.form.on('Gate Entry', {
-//     onload: function(frm) {
-//         // store the initial gate_entry_type
-//         frm._last_gate_entry_type = frm.doc.gate_entry_type;
-//     },
-
-//     gate_entry_type: function(frm) {
-//         // clear only if the new value is different from old
-//         if (frm._last_gate_entry_type !== frm.doc.gate_entry_type) {
-//             frm.set_value('from', '');
-//         }
-//         // update last stored value
-//         frm._last_gate_entry_type = frm.doc.gate_entry_type;
-//     }
-// });
-
-
-frappe.ui.form.on('Gate Entry', {
-    onload: function(frm) {
-        frm._last_gate_entry_type = frm.doc.gate_entry_type;
-    },
-
+frappe.ui.form.on('Gate Exit', {
     gate_entry_type: function(frm) {
-        if (frm._last_gate_entry_type !== frm.doc.gate_entry_type) {
-            // Reset 'from' on change
-            frm.set_value('from', '');
-
-            // Special case: auto-set for RM Inward
-            if (frm.doc.gate_entry_type === "RM Inward") {
-                frm.set_value('from', 'Supplier');
-            }
-
-            // You can add more mappings here if needed
-            // if (frm.doc.gate_entry_type === "Sales Invoice" || frm.doc.gate_entry_type === "Delivery Note(DC)") {
-            //     frm.set_value('from', 'Customer');
-            // }
+        if (frm.doc.gate_entry_type === "Sales Invoice" || frm.doc.gate_entry_type === "Delivery Note(DC)") {
+            frm.set_value("from", "Customer");
         }
-
-        // update stored last value
-        frm._last_gate_entry_type = frm.doc.gate_entry_type;
     }
 });

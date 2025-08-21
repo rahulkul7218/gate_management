@@ -1,0 +1,91 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-20 11:27:39.064769",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_h4ur",
+  "visitor_name",
+  "visitor_mobile_no",
+  "visitor_email_id",
+  "photo_of_visitor",
+  "id_proof_type",
+  "column_break_zwww",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_h4ur",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "visitor_name",
+   "fieldtype": "Data",
+   "label": "Visitor Name"
+  },
+  {
+   "fieldname": "column_break_zwww",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Instant Visitor Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "visitor_mobile_no",
+   "fieldtype": "Data",
+   "label": "Visitor Mobile No"
+  },
+  {
+   "fieldname": "visitor_email_id",
+   "fieldtype": "Data",
+   "label": "Visitor Email ID"
+  },
+  {
+   "fieldname": "photo_of_visitor",
+   "fieldtype": "Attach",
+   "label": "Photo of Visitor"
+  },
+  {
+   "fieldname": "id_proof_type",
+   "fieldtype": "Select",
+   "label": "ID Proof Type",
+   "options": "\nDriving License\nAadhar\nEmail ID\nPassport"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-20 11:30:49.722235",
+ "modified_by": "admin@gmail.com",
+ "module": "Gate Management",
+ "name": "Instant Visitor Entry",
+ "owner": "admin@gmail.com",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

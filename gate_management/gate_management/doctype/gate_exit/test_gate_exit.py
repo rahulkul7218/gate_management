@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestInviteVisitor(FrappeTestCase):
+class TestGateExit(FrappeTestCase):
 	pass
