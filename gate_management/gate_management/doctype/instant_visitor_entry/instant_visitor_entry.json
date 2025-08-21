@@ -11,8 +11,17 @@
   "visitor_email_id",
   "photo_of_visitor",
   "id_proof_type",
+  "upload_id_proof_image",
+  "visitee_employee_to_meet",
+  "department",
   "column_break_zwww",
-  "amended_from"
+  "amended_from",
+  "purpose_of_visit",
+  "visit_date",
+  "check_in_time_entry_time",
+  "expected_duration_optional",
+  "remarks",
+  "exit_time"
  ],
  "fields": [
   {
@@ -22,7 +31,9 @@
   {
    "fieldname": "visitor_name",
    "fieldtype": "Data",
-   "label": "Visitor Name"
+   "in_list_view": 1,
+   "label": "Visitor Name",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_zwww",
@@ -41,7 +52,9 @@
   {
    "fieldname": "visitor_mobile_no",
    "fieldtype": "Data",
-   "label": "Visitor Mobile No"
+   "in_list_view": 1,
+   "label": "Visitor Mobile No",
+   "reqd": 1
   },
   {
    "fieldname": "visitor_email_id",
@@ -51,21 +64,76 @@
   {
    "fieldname": "photo_of_visitor",
    "fieldtype": "Attach",
-   "label": "Photo of Visitor"
+   "in_list_view": 1,
+   "label": "Photo of Visitor",
+   "reqd": 1
   },
   {
    "fieldname": "id_proof_type",
    "fieldtype": "Select",
    "label": "ID Proof Type",
    "options": "\nDriving License\nAadhar\nEmail ID\nPassport"
+  },
+  {
+   "fieldname": "upload_id_proof_image",
+   "fieldtype": "Attach",
+   "label": "Upload ID Proof Image"
+  },
+  {
+   "fieldname": "visitee_employee_to_meet",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Visitee (Employee to Meet)",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purpose_of_visit",
+   "fieldtype": "Data",
+   "label": "Purpose of Visit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "visit_date",
+   "fieldtype": "Date",
+   "label": "Visit Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "check_in_time_entry_time",
+   "fieldtype": "Time",
+   "label": "Check in Time (Entry Time)"
+  },
+  {
+   "fieldname": "expected_duration_optional",
+   "fieldtype": "Duration",
+   "label": "Expected Duration (Optional)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "exit_time",
+   "fieldtype": "Time",
+   "label": "Exit Time"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-20 11:30:49.722235",
- "modified_by": "admin@gmail.com",
+ "modified": "2025-08-21 15:32:19.165870",
+ "modified_by": "Administrator",
  "module": "Gate Management",
  "name": "Instant Visitor Entry",
  "owner": "admin@gmail.com",

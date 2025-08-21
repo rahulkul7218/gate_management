@@ -1,0 +1,93 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow",
+  "document_type": "Gate Entry",
+  "is_active": 1,
+  "modified": "2025-08-21 13:33:52.712817",
+  "name": "Gate Entry Workflow",
+  "override_status": 0,
+  "send_email_alert": 0,
+  "states": [
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Gate Entry Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "Draft",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "1"
+   },
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Gate Entry Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "Submit",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "2"
+   },
+   {
+    "allow_edit": "All",
+    "avoid_status_override": 0,
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Gate Entry Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "send_email": 1,
+    "state": "Closed",
+    "update_field": null,
+    "update_value": null,
+    "workflow_builder_id": "3"
+   }
+  ],
+  "transitions": [
+   {
+    "action": "Submit",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Submit",
+    "parent": "Gate Entry Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "Draft",
+    "workflow_builder_id": "action-1"
+   },
+   {
+    "action": "Closed",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Closed",
+    "parent": "Gate Entry Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "send_email_to_creator": 0,
+    "state": "Submit",
+    "workflow_builder_id": "action-2"
+   }
+  ],
+  "workflow_data": "[{\"type\":\"state\",\"dimensions\":{\"width\":84,\"height\":52},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":38.692138671875,\"y\":-11.25,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":88.63427734375,\"y\":22.731475830078125,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":38.692138671875,\"y\":56.72454833984375,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.25,\"y\":22.731475830078125,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":31.21759033203125,\"y\":169.2847137451172,\"z\":0},\"id\":\"1\",\"position\":{\"x\":31.21759033203125,\"y\":169.2847137451172}},{\"type\":\"state\",\"dimensions\":{\"width\":99,\"height\":52},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":45.82177734375,\"y\":-11.25,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":102.89349365234375,\"y\":22.731491088867188,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":45.82177734375,\"y\":56.72453308105469,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.25,\"y\":22.731491088867188,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":347.21759033203125,\"y\":141.2847137451172,\"z\":0},\"id\":\"2\",\"position\":{\"x\":347.21759033203125,\"y\":141.2847137451172}},{\"type\":\"state\",\"dimensions\":{\"width\":98,\"height\":52},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":45.5323486328125,\"y\":-11.25,\"width\":7,\"height\":7},{\"id\":\"right\",\"position\":\"right\",\"x\":102.326416015625,\"y\":22.731475830078125,\"width\":7,\"height\":7},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":45.5323486328125,\"y\":56.72454833984375,\"width\":7,\"height\":7},{\"id\":\"left\",\"position\":\"left\",\"x\":-11.25,\"y\":22.731475830078125,\"width\":7,\"height\":7}]},\"computedPosition\":{\"x\":672.2175903320312,\"y\":158.2847137451172,\"z\":0},\"id\":\"3\",\"position\":{\"x\":672.2175903320312,\"y\":158.2847137451172}},{\"type\":\"action\",\"dimensions\":{\"width\":69,\"height\":32},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":31.3194580078125,\"y\":-2.256927490234375,\"width\":6,\"height\":6},{\"id\":\"right\",\"position\":\"right\",\"x\":64.8958740234375,\"y\":13.22918701171875,\"width\":6,\"height\":6},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":31.3194580078125,\"y\":28.72686767578125,\"width\":6,\"height\":6},{\"id\":\"left\",\"position\":\"left\",\"x\":-2.25689697265625,\"y\":13.22918701171875,\"width\":6,\"height\":6}]},\"computedPosition\":{\"x\":194.96759033203125,\"y\":179.2847137451172,\"z\":0},\"id\":\"action-1\",\"position\":{\"x\":194.96759033203125,\"y\":179.2847137451172},\"data\":{\"from_id\":\"1\",\"to_id\":\"2\"}},{\"type\":\"action\",\"dimensions\":{\"width\":68,\"height\":32},\"handleBounds\":{\"source\":[{\"id\":\"top\",\"position\":\"top\",\"x\":31.03009033203125,\"y\":-2.2569580078125,\"width\":6,\"height\":6},{\"id\":\"right\",\"position\":\"right\",\"x\":64.3287353515625,\"y\":13.229156494140625,\"width\":6,\"height\":6},{\"id\":\"bottom\",\"position\":\"bottom\",\"x\":31.03009033203125,\"y\":28.726837158203125,\"width\":6,\"height\":6},{\"id\":\"left\",\"position\":\"left\",\"x\":-2.2569580078125,\"y\":13.229156494140625,\"width\":6,\"height\":6}]},\"computedPosition\":{\"x\":518.9675903320312,\"y\":151.2847137451172,\"z\":0},\"id\":\"action-2\",\"position\":{\"x\":518.9675903320312,\"y\":151.2847137451172},\"data\":{\"from_id\":\"2\",\"to_id\":\"3\"}},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"1\",\"target\":\"action-1\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-1right-action-1left\",\"sourceX\":126.85186767578125,\"sourceY\":195.5161895751953,\"targetX\":192.710693359375,\"targetY\":195.51390075683594},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"action-1\",\"target\":\"2\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-action-1right-2left\",\"sourceX\":265.86346435546875,\"sourceY\":195.51390075683594,\"targetX\":335.96759033203125,\"targetY\":167.51620483398438,\"markerEnd\":{\"type\":\"arrow\",\"width\":15,\"height\":15,\"strokeWidth\":1.5,\"color\":\"#687178\"}},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"2\",\"target\":\"action-2\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-2right-action-2left\",\"sourceX\":457.111083984375,\"sourceY\":167.51620483398438,\"targetX\":516.7106323242188,\"targetY\":167.5138702392578},{\"sourceHandle\":\"right\",\"targetHandle\":\"left\",\"type\":\"transition\",\"source\":\"action-2\",\"target\":\"3\",\"updatable\":true,\"animated\":true,\"id\":\"vueflow__edge-action-2right-3left\",\"sourceX\":589.2963256835938,\"sourceY\":167.5138702392578,\"targetX\":660.9675903320312,\"targetY\":184.5161895751953,\"markerEnd\":{\"type\":\"arrow\",\"width\":15,\"height\":15,\"strokeWidth\":1.5,\"color\":\"#687178\"}}]",
+  "workflow_name": "Gate Entry Workflow",
+  "workflow_state_field": "workflow_state"
+ }
+]

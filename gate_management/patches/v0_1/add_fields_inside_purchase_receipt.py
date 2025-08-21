@@ -10,4 +10,5 @@ def execute():
             "fieldtype": "Link",
             "options": "Gate Entry",
             "insert_after": "set_posting_time",
+            "reqd": 1
         })
