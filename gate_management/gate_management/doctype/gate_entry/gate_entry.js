@@ -14,13 +14,14 @@ frappe.ui.form.on('Gate Entry', {
 
             // Make 'descriptionremark' mandatory
             frm.set_df_property('descriptionremark', 'reqd', 1);
-              frm.set_df_property('other_details', 'reqd', 1);
+            frm.set_df_property('other_details', 'reqd', 1);
         } else {
             // Show 'vendorcustomer' again
             frm.set_df_property('vendorcustomer', 'hidden', 0);
 
             // Remove mandatory from 'descriptionremark'
             frm.set_df_property('descriptionremark', 'reqd', 0);
+            frm.set_df_property('other_details', 'reqd', 0);
         }
     },
 

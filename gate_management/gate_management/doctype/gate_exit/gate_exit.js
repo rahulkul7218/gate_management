@@ -22,6 +22,7 @@ frappe.ui.form.on('Gate Exit', {
 
             // Remove mandatory from 'descriptionremark'
             frm.set_df_property('descriptionremark', 'reqd', 0);
+            frm.set_df_property('other_details', 'reqd', 0);
         }
     },
 
