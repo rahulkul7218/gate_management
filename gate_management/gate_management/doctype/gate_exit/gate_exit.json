@@ -13,8 +13,8 @@
   "from",
   "vendorcustomer",
   "supplier",
-  "document",
-  "document_no",
+  "document_so_no",
+  "document_po_no",
   "other_details",
   "descriptionremark",
   "package_qty",
@@ -59,6 +59,7 @@
    "fieldtype": "Select",
    "label": "Gate Exit Type",
    "options": "\nSales Invoice\nDelivery Note(DC)\nReturn To Supplier\nOther",
+   "placeholder": "Select",
    "reqd": 1
   },
   {
@@ -66,6 +67,7 @@
    "fieldtype": "Select",
    "label": "From",
    "options": "\nCustomer\nSupplier",
+   "placeholder": "Select",
    "reqd": 1
   },
   {
@@ -73,38 +75,28 @@
    "fieldname": "vendorcustomer",
    "fieldtype": "Link",
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "placeholder": "Select"
   },
   {
    "depends_on": "eval:doc.from=='Supplier'",
    "fieldname": "supplier",
    "fieldtype": "Link",
    "label": "Supplier",
-   "options": "Supplier"
+   "options": "Supplier",
+   "placeholder": "Select"
   },
   {
    "fieldname": "descriptionremark",
    "fieldtype": "Small Text",
-   "label": "Description/Remark"
-  },
-  {
-   "depends_on": "eval:doc.from=='Customer'",
-   "fieldname": "document",
-   "fieldtype": "Link",
-   "label": "Document No.",
-   "options": "Sales Order"
-  },
-  {
-   "depends_on": "eval:doc.from=='Supplier'",
-   "fieldname": "document_no",
-   "fieldtype": "Link",
-   "label": "Document No.",
-   "options": "Purchase Order"
+   "label": "Description/Remark",
+   "placeholder": "Enter your remarks here\u2026"
   },
   {
    "fieldname": "package_qty",
    "fieldtype": "Float",
    "label": "Package Qty",
+   "placeholder": "1111",
    "reqd": 1
   },
   {
@@ -124,19 +116,22 @@
    "in_list_view": 1,
    "label": "Material Movement Type",
    "options": "\nBy Vehicle\nBy Hand",
+   "placeholder": "Select",
    "reqd": 1
   },
   {
    "depends_on": "eval:doc.material_movement_type==\"By Hand\"",
    "fieldname": "delivered_by_name",
    "fieldtype": "Data",
-   "label": "Delivered By Name"
+   "label": "Delivered By Name",
+   "placeholder": "Name"
   },
   {
    "depends_on": "eval:doc.material_movement_type==\"By Hand\"",
    "fieldname": "delivered_by_mobile_no",
    "fieldtype": "Data",
-   "label": "Delivered By Mobile No."
+   "label": "Delivered By Mobile No.",
+   "placeholder": "XXXXX XXXXX"
   },
   {
    "depends_on": "eval:doc.material_movement_type==\"By Hand\"",
@@ -148,7 +143,8 @@
    "depends_on": "eval:doc.material_movement_type==\"By Vehicle\"",
    "fieldname": "vehicle_no",
    "fieldtype": "Data",
-   "label": "Vehicle No"
+   "label": "Vehicle No",
+   "placeholder": "AB 01 CD 1234"
   },
   {
    "depends_on": "eval:doc.material_movement_type==\"By Vehicle\"",
@@ -176,20 +172,38 @@
    "depends_on": "eval:doc.gate_entry_type==\"Other\"",
    "fieldname": "other_details",
    "fieldtype": "Data",
-   "label": "Other Details"
+   "label": "Other Details",
+   "placeholder": "Enter other details here\u2026"
   },
   {
    "fieldname": "packing_material_type",
    "fieldtype": "Link",
    "label": "Packing Material Type",
    "options": "Packing Material Type",
+   "placeholder": "Select",
    "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.from=='Customer'",
+   "fieldname": "document_so_no",
+   "fieldtype": "Link",
+   "label": "Document SO No.",
+   "options": "Sales Order",
+   "placeholder": "Select"
+  },
+  {
+   "depends_on": "eval:doc.from=='Supplier'",
+   "fieldname": "document_po_no",
+   "fieldtype": "Link",
+   "label": "Document PO No.",
+   "options": "Purchase Order",
+   "placeholder": "Select"
   }
  ],
  "grid_page_length": 50,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-21 13:16:57.473732",
+ "modified": "2025-08-22 16:18:20.482347",
  "modified_by": "Administrator",
  "module": "Gate Management",
  "name": "Gate Exit",
