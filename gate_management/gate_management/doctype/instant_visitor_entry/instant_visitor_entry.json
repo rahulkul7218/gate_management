@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:VST-INSVE-{YYYY}-{MM}-{####}",
  "creation": "2025-08-20 11:27:39.064769",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -33,6 +34,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Visitor Name",
+   "placeholder": "Name",
    "reqd": 1
   },
   {
@@ -54,12 +56,14 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Visitor Mobile No",
+   "placeholder": "XXXXX XXXXX",
    "reqd": 1
   },
   {
    "fieldname": "visitor_email_id",
    "fieldtype": "Data",
-   "label": "Visitor Email ID"
+   "label": "Visitor Email ID",
+   "placeholder": "abcd@gmail.com"
   },
   {
    "fieldname": "photo_of_visitor",
@@ -72,7 +76,8 @@
    "fieldname": "id_proof_type",
    "fieldtype": "Select",
    "label": "ID Proof Type",
-   "options": "\nDriving License\nAadhar\nEmail ID\nPassport"
+   "options": "\nDriving License\nAadhar\nEmail ID\nPassport",
+   "placeholder": "Select"
   },
   {
    "fieldname": "upload_id_proof_image",
@@ -85,6 +90,7 @@
    "in_list_view": 1,
    "label": "Visitee (Employee to Meet)",
    "options": "Employee",
+   "placeholder": "Select",
    "reqd": 1
   },
   {
@@ -92,50 +98,59 @@
    "fieldtype": "Link",
    "label": "Department",
    "options": "Department",
+   "placeholder": "Select",
    "reqd": 1
   },
   {
    "fieldname": "purpose_of_visit",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Purpose of Visit",
+   "options": "Purpose of Visit",
+   "placeholder": "Select",
    "reqd": 1
   },
   {
    "fieldname": "visit_date",
    "fieldtype": "Date",
    "label": "Visit Date",
+   "placeholder": "Date",
    "reqd": 1
   },
   {
    "fieldname": "check_in_time_entry_time",
    "fieldtype": "Time",
-   "label": "Check in Time (Entry Time)"
+   "label": "Check in Time (Entry Time)",
+   "placeholder": "12:12:12"
   },
   {
    "fieldname": "expected_duration_optional",
    "fieldtype": "Duration",
    "label": "Expected Duration (Optional)",
+   "placeholder": "1d 1h 5m",
    "reqd": 1
   },
   {
    "fieldname": "remarks",
    "fieldtype": "Small Text",
-   "label": "Remarks"
+   "label": "Remarks",
+   "placeholder": "Enter your remarks here\u2026"
   },
   {
    "fieldname": "exit_time",
    "fieldtype": "Time",
-   "label": "Exit Time"
+   "label": "Exit Time",
+   "placeholder": "12:12:12"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-21 15:32:19.165870",
+ "modified": "2025-08-22 16:10:52.331653",
  "modified_by": "Administrator",
  "module": "Gate Management",
  "name": "Instant Visitor Entry",
+ "naming_rule": "Expression",
  "owner": "admin@gmail.com",
  "permissions": [
   {

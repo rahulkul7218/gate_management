@@ -28,7 +28,8 @@
   {
    "fieldname": "visitor_name",
    "fieldtype": "Data",
-   "label": "Visitor Name"
+   "label": "Visitor Name",
+   "placeholder": "Name"
   },
   {
    "fieldname": "column_break_nllj",
@@ -39,7 +40,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-21 15:54:33.451373",
+ "modified": "2025-08-22 12:43:45.333902",
  "modified_by": "Administrator",
  "module": "Gate Management",
  "name": "Check In-Out",

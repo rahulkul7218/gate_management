@@ -7,7 +7,7 @@
 // 	},
 // });
 
-frappe.ui.form.on("Instant Visitor Entry", {
+frappe.ui.form.on("Invited Visitor Entry", {
     refresh: function(frm) {
         // Attach live validation to both fields
         ["visitor_name", "host_name"].forEach(fieldname => {
@@ -23,7 +23,7 @@ frappe.ui.form.on("Instant Visitor Entry", {
     }
 });
 
-frappe.ui.form.on('Instant Visitor Entry', {
+frappe.ui.form.on('Invited Visitor Entry', {
     refresh: function(frm) {
         let field = frm.fields_dict['visitor_mobile_number'].$input;
 
@@ -55,7 +55,7 @@ frappe.ui.form.on('Instant Visitor Entry', {
     }
 });
 
-frappe.ui.form.on('Instant Visitor Entry', {
+frappe.ui.form.on('Invited Visitor Entry', {
     refresh: function(frm) {
         let field = frm.fields_dict['visitor_email_id'].$input;
 

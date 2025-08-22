@@ -13,18 +13,20 @@
   {
    "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Name",
+   "placeholder": "Name",
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-19 16:36:22.271243",
+ "modified": "2025-08-22 12:28:55.257563",
  "modified_by": "Administrator",
  "module": "Gate Management",
  "name": "Packing Material Type",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
-  "naming_rule": "By fieldname",
  "permissions": [
   {
    "create": 1,
@@ -40,10 +42,10 @@
   }
  ],
  "row_format": "Dynamic",
- "sort_field": "modified",
- "sort_order": "DESC",
- "title_field": "name1",
  "search_fields": "name1",
  "show_name_in_global_search": 1,
- "states": []
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "name1"
 }

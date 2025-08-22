@@ -37,17 +37,20 @@
   {
    "fieldname": "visitor_name",
    "fieldtype": "Data",
-   "label": "Visitor Name"
+   "label": "Visitor Name",
+   "placeholder": "Name"
   },
   {
    "fieldname": "visitor_mobile_number",
    "fieldtype": "Data",
-   "label": "Visitor Mobile Number"
+   "label": "Visitor Mobile Number",
+   "placeholder": "XXXXX XXXXX"
   },
   {
    "fieldname": "visitor_email_id",
    "fieldtype": "Data",
-   "label": "Visitor Email ID"
+   "label": "Visitor Email ID",
+   "placeholder": "abcd@gmail.com"
   },
   {
    "fieldname": "column_break_bctt",
@@ -57,43 +60,49 @@
    "fieldname": "purpose_of_visit",
    "fieldtype": "Link",
    "label": "Purpose of Visit",
-   "options": "Purpose of Visit"
+   "options": "Purpose of Visit",
+   "placeholder": "Select"
   },
   {
    "fieldname": "host_name",
    "fieldtype": "Data",
-   "label": "Host Name"
+   "label": "Host Name",
+   "placeholder": "Name"
   },
   {
    "fieldname": "department",
    "fieldtype": "Link",
    "label": "Department",
-   "options": "Department"
+   "options": "Department",
+   "placeholder": "Select"
   },
   {
    "fieldname": "visit_date",
    "fieldtype": "Date",
-   "label": "Visit Date"
+   "label": "Visit Date",
+   "placeholder": "Date"
   },
   {
    "fieldname": "visit_time_slot",
    "fieldtype": "Duration",
-   "label": "Visit Time Slot"
+   "label": "Visit Time Slot",
+   "placeholder": "1d 1h 5m"
   },
   {
    "fieldname": "exit_time",
    "fieldtype": "Time",
-   "label": "Exit Time"
+   "label": "Exit Time",
+   "placeholder": "12:12:12"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-21 15:42:05.803045",
+ "modified": "2025-08-22 12:41:52.926263",
  "modified_by": "Administrator",
  "module": "Gate Management",
- "name": "Invited Vistor Entry",
+ "name": "Invited Visitor Entry",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
