@@ -19,10 +19,10 @@
   "amended_from",
   "purpose_of_visit",
   "visit_date",
-  "check_in_time_entry_time",
+  "check_in_time",
   "expected_duration_optional",
   "remarks",
-  "exit_time"
+  "check_out_time"
  ],
  "fields": [
   {
@@ -117,12 +117,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "check_in_time_entry_time",
-   "fieldtype": "Time",
-   "label": "Check in Time (Entry Time)",
-   "placeholder": "12:12:12"
-  },
-  {
    "fieldname": "expected_duration_optional",
    "fieldtype": "Duration",
    "label": "Expected Duration (Optional)",
@@ -136,9 +130,15 @@
    "placeholder": "Enter your remarks here\u2026"
   },
   {
-   "fieldname": "exit_time",
+   "fieldname": "check_in_time",
    "fieldtype": "Time",
-   "label": "Exit Time",
+   "label": "Check in Time (Entry Time)",
+   "placeholder": "12:12:12"
+  },
+  {
+   "fieldname": "check_out_time",
+   "fieldtype": "Time",
+   "label": "Check Out (Exit Time)",
    "placeholder": "12:12:12"
   }
  ],
@@ -146,7 +146,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-22 16:10:52.331653",
+ "modified": "2025-09-08 15:52:40.079642",
  "modified_by": "Administrator",
  "module": "Gate Management",
  "name": "Instant Visitor Entry",
