@@ -171,12 +171,12 @@ frappe.listview_settings["Gate Exit"] = {
     hide_name_filter: true,
 };
 
-frappe.ui.form.on('Gate Exit', {
-    gate_entry_type: function(frm) {
-        // When gate_entry_type changes, reset 'from' field
-        frm.set_value('from', '');
-    }
-});
+// frappe.ui.form.on('Gate Exit', {
+//     gate_entry_type: function(frm) {
+//         // When gate_entry_type changes, reset 'from' field
+//         frm.set_value('from', '');
+//     }
+// });
 
 frappe.ui.form.on('Gate Exit', {
     material_movement_type: function(frm) {
