@@ -264,4 +264,18 @@ doc_events = {
     }
 
 }
-fixtures = ["Workflow", "Workflow State", "Workflow Action"]
+# fixtures = ["Workflow" :{filters=""}, "Workflow State", "Workflow Action"]
+fixtures = [
+    {
+        "doctype": "Workflow",
+        "filters": [["name", "=", "Gate Entry Workflow"]]
+    },
+    {
+        "doctype": "Workflow State",
+        
+    },
+    {
+        "doctype": "Workflow Action Master",
+        
+    }
+]
